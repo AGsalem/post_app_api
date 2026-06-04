@@ -1,0 +1,7 @@
+node_modules/
+# test_change/
+pnpm-lock.ymal
+package-lock.json
+bun.lock
+schema
+.env
