@@ -3,5 +3,5 @@ node_modules/
 pnpm-lock.ymal
 package-lock.json
 bun.lock
-schema
-.env
+# schema
+# .env

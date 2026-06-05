@@ -1,5 +1,6 @@
 //استعادات 
 import express from 'express'
+import expressListEndpoints from 'express-list-endpoints'
 import connect from './connect/connection.js'
 import helmet from 'helmet'
 import 'dotenv/config'
@@ -9,14 +10,17 @@ const app = express()
 app.use(helmet())
 app.use(cors())
 app.get('/',async(req,res)=>{
-    res.json({"welcom to api":""})
+    res.json({"message":"welcom to api"})
 })
-
 app.use(connect)
+const endpoints=expressListEndpoints(app)
 const port = process.env.PORT | 3000
  const start = async ()=>{
  await app.listen(port,()=>{
+     
 console.log(`port in ${port}`)
+console.log(endpoints)
+// console.clear()
  })
 }
 start()

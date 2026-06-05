@@ -1,6 +1,8 @@
 import { Router } from "express";
-import db from "../plugin/db.js" 
+import Create_user from "../routes/users/create.user.js";
+import seeuser from "../routes/users/see.user.js";
 const connect =Router()
- connect.use(db)
+connect.use(seeuser)
+connect.use(Create_user)
 console.log("connection true")
 export default connect
