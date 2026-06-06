@@ -5,3 +5,7 @@ package-lock.json
 bun.lock
 # schema
 # .env
+run php,express
+.thorclient
+# مسح الكاش عشان ميهنجش من ملف مش عايزة يترفع
+# git add .git rm -rf --cached .
