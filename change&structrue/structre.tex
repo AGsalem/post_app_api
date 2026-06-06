@@ -5,29 +5,29 @@
  a + b.js
 ---------------------------------------
 __.env
--src______
-          |___index.js 
-     _____|
-     |
-     |-Connect__
-     |		 |__connection.js      
-     |-plugin____-
-     |   	       |__db.js  
-     |           |__ jwt.js  
-     |-routs_-   |__ joi.js
-	        |        
-             |___-users______________________-   
-             |___-posts_                      |
-                        |__create.post.js     |___create.user.js
-                        |                     |
-                        |__delete.post.js     |___delete.user.js
-                        |                     |                 
-                        |__update.post.js     |__update.user.js
-                        |                     |
-                        |__post.js            |__see.user.js 
-                          
-          
-        
-                
-     
-   
+-src__
+      |___index.js 
+      |Connect-
+      |	|__connection.js      
+      |plugin/
+      |   |__db.js  
+      |   |__ joi.js 
+      |routs/  
+             |     
+             |users/
+             |   |
+             |   |___create.user.js
+             |   |
+             |   |___delete.user.js
+             |   |                 
+             |   |__update.user.js
+             |   |
+             |   |__see.user.js 
+             |posts/    
+                  |__create.post.js
+                  |
+                  |__delete.post.js
+                  |
+                  |__update.post.js
+                  |
+                  |__post.js

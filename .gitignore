@@ -1,11 +1,13 @@
 node_modules/
-# test_change/
+test_change/
 pnpm-lock.ymal
 package-lock.json
+pnpm-workspace.yaml
 bun.lock
-# schema
-# .env
+# # schema
+# # .env
 run php,express
 .thorclient
-# مسح الكاش عشان ميهنجش من ملف مش عايزة يترفع
-# git add .git rm -rf --cached .
+# # مسح الكاش عشان ميهنجش من ملف مش عايزة يترفع
+# # git add .git rm -rf --cached .
+# # 
