@@ -10,9 +10,12 @@ import seeAllpost from "../routes/posts/post.js";
 import UpdatePost from "../routes/posts/update.post.js";
 import CreatePost from "../routes/posts/create.post.js";
 import DeletePost from "../routes/posts/delete.post.js";
-
+// دة الملف الغلبان الوحيد الي هيتعرف ههنا منolugin
+import limit from "../plugin/limit.js";
 // تعريف المتغير 
 const connect =Router()
+// تعريف الplugin قبل كلة عشان يحد الطلبات ويمنع مخاولة الاختبار
+connect.use(limit)
 // استخدام connectلتعريف ملفات المستخدم في  السيرفر 
 // استخدام ملفات االمستخدم  لتعريفها للسيرفر
 // رؤية المستخدمين لي  الادمن
