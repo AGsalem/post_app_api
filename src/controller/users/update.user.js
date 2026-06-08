@@ -1,9 +1,8 @@
 import e from "express";
 import db from "../../plugin/db.js";
 import http from 'http'
-const UpdateUser = e.Router()
-UpdateUser.use(e.json())
-UpdateUser.put('/users/:id', async (req, res) => {
+// const UpdateUser = e.Router()
+    const UpdateUser=async(req,res)=>{
     try {
         const id = req.params.id
         const { name, pass } = req.body
@@ -36,6 +35,5 @@ UpdateUser.put('/users/:id', async (req, res) => {
         
 
     }
-})
-
+}
 export default UpdateUser

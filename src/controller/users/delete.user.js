@@ -1,8 +1,7 @@
 import e from "express";
 import db from "../../plugin/db.js";
-const DeleteUser = e.Router()
-DeleteUser.use(e.Router())
-DeleteUser.delete('/users/:id', async (req, res) => {
+
+const DeleteUser=async(req,res)=>{
     try {
         const id = req.params.id
         const { name, pass } = req.body
@@ -24,5 +23,5 @@ DeleteUser.delete('/users/:id', async (req, res) => {
         console.error(err)
 return res.status(401).json('err')
     }
-})
+}
 export default DeleteUser 

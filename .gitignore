@@ -11,3 +11,5 @@ run php,express
 # # مسح الكاش عشان ميهنجش من ملف مش عايزة يترفع
 # # git add .git rm -rf --cached .
 # # 
+pnpm-lock.yaml
+pnpm-workspace.yaml

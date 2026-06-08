@@ -1,8 +1,6 @@
 import e from "express";
 import db from "../../plugin/db.js";
-const CreatePost = e.Router()
-CreatePost.use(e.json())
-CreatePost.post('/post/:id', async (req, res) => {
+const CreatePost = (async (req, res) => {
     try {
         const id = req.params.id
         const { post, com } = req.body

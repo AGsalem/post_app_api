@@ -1,21 +1,26 @@
 // استعادة من node_modules
 import { Router } from "express";
 // استعادة ملفات المستخدم
-import UpdateUser from "../routes/users/update.user.js";
-import CreateUser from "../routes/users/create.user.js";
-import seeuser from "../routes/users/see.user.js";
-import DeleteUser from "../routes/users/delete.user.js";
+import UpdateUser from "../controller/users/update.user.js";
+import CreateUser from "../controller/users/create.user.js";
+import seeuser from "../controller/users/see.user.js";
+import DeleteUser from "../controller/users/delete.user.js";
+import loginUser from "../controller/users/login.js";
 // استعادة بوستات المستخدم 
-import seeAllpost from "../routes/posts/post.js";
-import UpdatePost from "../routes/posts/update.post.js";
-import CreatePost from "../routes/posts/create.post.js";
-import DeletePost from "../routes/posts/delete.post.js";
-// دة الملف الغلبان الوحيد الي هيتعرف ههنا منolugin
+import seeAllpost from '../controller/posts/seepost.js'
+import UpdatePost from "../controller/posts/update.post.js";
+import CreatePost from "../controller/posts/create.post.js";
+import DeletePost from "../controller/posts/delete.post.js";
+// دة الملف الغلبان الوحيد الي هيتعرف هنا منplugin
 import limit from "../plugin/limit.js";
+// استعادة multer 
+import multer from "../plugin/multer.js";
 // تعريف المتغير 
 const connect =Router()
 // تعريف الplugin قبل كلة عشان يحد الطلبات ويمنع مخاولة الاختبار
 connect.use(limit)
+// لتعريف ملف multer في السيرفر
+connect.use(multer)
 // استخدام connectلتعريف ملفات المستخدم في  السيرفر 
 // استخدام ملفات االمستخدم  لتعريفها للسيرفر
 // رؤية المستخدمين لي  الادمن
@@ -26,7 +31,9 @@ connect.use(CreateUser)
 connect.use(UpdateUser)
 // حذف المستخدم 
 connect.use(DeleteUser)
+
 // connect.use(هنا حط تسجيل الدخول) 
+connect.use(loginUser)
 // استخدام ملفات بوستات المستخدم في السيرفر 
 // ملف رؤية البوستات عشوائي
 connect.use(seeAllpost)

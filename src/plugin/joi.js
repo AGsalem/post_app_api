@@ -7,7 +7,7 @@ const schema = joi.object({
 const er = (req, res, next) => {
 const {error}=schema.validate(req.body)
 if(error){
-    return res.status(406).json("erorr please enter name > 8 and pass > 8")
+    return res.status(406).json({"error":" please enter name > 8 and pass > 8"})
 }
 next()
 }

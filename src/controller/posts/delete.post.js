@@ -1,8 +1,6 @@
 import e from "express";
 import db from "../../plugin/db.js";
-const DeletePost = e.Router()
-DeletePost.use(e.json())
-DeletePost.delete('/post/:id', async (req, res) => {
+const DeletePost = (async (req, res) => {
     try {
         const id = req.params.id
         const [al] = await db.query("SELECT * FROM users WHERE id = ?", [id])
@@ -16,7 +14,7 @@ DeletePost.delete('/post/:id', async (req, res) => {
         }
     } catch (err) {
         console.error(err)
-        return res.status(401).json({ err: "please enter anthor name and pass" ,post:post,com:com,user_id:id})
+        return res.status(401).json({ err: "please enter anthor name and pass", post: post, com: com, user_id: id })
 
     }
 })

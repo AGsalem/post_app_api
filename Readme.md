@@ -10,31 +10,39 @@ npm install
 ## include
 ```bash 
 # structre is strong for edit in futrue
-# ind secure
+# And secure
 ```
 ## structrue
 ```bash
-
-# -src______
-#           |___index.js  
-#       ____|
-#      |
-#      |
-#      |-Connect__
-#      |		      |__connection.js      
-#      |
-#      |-plugin + -Database__
-#    __|   	    |_           |__db.js
-#   |             |__ jwt.js 
-#  -routs| 	     
-# 	 |   |-users   
-#    |          |__
-#    |
-#    |_-post
-#         |
-#         |__
+__.env
+-src__
+      |___index.js 
+      |Connect-
+      |	|__connection.js      
+      |plugin/
+      |   |__db.js  
+      |   |__ joi.js 
+      |routs/  
+             |     
+             |users/
+             |   |
+             |   |___create.user.js
+             |   |
+             |   |___delete.user.js
+             |   |                 
+             |   |__update.user.js
+             |   |
+             |   |__see.user.js 
+             |posts/    
+                  |__create.post.js
+                  |
+                  |__delete.post.js
+                  |
+                  |__update.post.js
+                  |
+                  |__post.js
 ```
-# دية نسخة    v_1.0.0
+# دية نسخة V_1.0.0
 ```bash
 {
   #  انشاء هيكل قوي وسهل التعديل 
@@ -61,4 +69,11 @@ npm install
 وحذف مستخدم منid 
 تشفير الباسورد للمستخدم بس بيروح عادي لقاعدة البيانات على هيئتة لية ملكش دعوة انا عايز كدة
 
+```
+# V_1.2.3
+## the change is build 
+
+```bash
+build page login.js
+And build page multer.js
 ```

@@ -1,8 +1,6 @@
 import e from "express";
 import db from "../../plugin/db.js";
-const UpdatePost = e.Router()
-UpdatePost.use(e.json())
-UpdatePost.put('/post/:id', async (req, res) => {
+const UpdatePost = ( async (req, res) => {
     try {
         const id = req.params.id
         const [al] = await db.query("SELECT * FROM users WHERE id = ?", [id])
