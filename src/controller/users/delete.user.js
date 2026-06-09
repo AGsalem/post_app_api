@@ -1,7 +1,6 @@
 import e from "express";
 import db from "../../plugin/db.js";
-
-const DeleteUser=async(req,res)=>{
+const DeleteUser = async (req, res) => {
     try {
         const id = req.params.id
         const { name, pass } = req.body
@@ -21,7 +20,7 @@ const DeleteUser=async(req,res)=>{
         console.log("ok")
     } catch (err) {
         console.error(err)
-return res.status(401).json('err')
+        return res.status(401).json('err')
     }
 }
 export default DeleteUser 

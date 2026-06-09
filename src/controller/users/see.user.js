@@ -1,7 +1,4 @@
-import e from "express";
-import db from "../../plugin/db";
-// const seeuse = e.Router()
-// seeuse.use(e.json())
+import db from "../../plugin/db.js";
  const seeuser = async (req, res) => {
     try {
         const [CreateUser] = await db.query("SELECT * FROM `users`")
@@ -17,7 +14,7 @@ import db from "../../plugin/db";
             return res.json(CreateUser)
         }
     } catch (err) {
-        console.error(err)
+        // console.error(err)
         res.status(401).json({ "err": " please enter the hash of secret of pass key" })
     }
 }

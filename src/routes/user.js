@@ -6,6 +6,7 @@ import seeuser from '../controller/users/see.user.js' ;
 import DeleteUser from "../controller/users/delete.user.js";
 import loginUser from "../controller/users/login.js";
 import er from "../plugin/joi.js";
+import auth from "../plugin/auth.js";
 const users=e.Router()
 
 // اولا   تعريف الroute بتاع crud للمستخدمين

@@ -6,6 +6,9 @@ import CreateUser from "../controller/users/create.user.js";
 import seeuser from "../controller/users/see.user.js";
 import DeleteUser from "../controller/users/delete.user.js";
 import loginUser from "../controller/users/login.js";
+import users from "../routes/user.js";
+// تجربة
+import posts from "../routes/post.js";
 // استعادة بوستات المستخدم 
 import seeAllpost from '../controller/posts/seepost.js'
 import UpdatePost from "../controller/posts/update.post.js";
@@ -17,6 +20,9 @@ import limit from "../plugin/limit.js";
 import multer from "../plugin/multer.js";
 // تعريف المتغير 
 const connect =Router()
+// دة مهم جدا لازم تعرف routes هنا عشان يشتغلو في السيرفر
+connect.use(posts)
+connect.use(users)
 // تعريف الplugin قبل كلة عشان يحد الطلبات ويمنع مخاولة الاختبار
 connect.use(limit)
 // لتعريف ملف multer في السيرفر
