@@ -20,7 +20,7 @@ const DeleteUser = async (req, res) => {
         console.log("ok")
     } catch (err) {
         console.error(err)
-        return res.status(401).json('err')
+        return res.status(500).json('err')
     }
 }
 export default DeleteUser 

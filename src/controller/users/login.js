@@ -23,8 +23,8 @@ const loginUser = async(req, res) => {
       })
     }
   } catch (err) {
-    console.error(err)
-    return res.status(401).json({ "error": "Internal Server Erorr" })
+    // console.error(err)
+    return res.status(500).json({ "error": "Internal Server Erorr" })
   }
 }
 export default loginUser

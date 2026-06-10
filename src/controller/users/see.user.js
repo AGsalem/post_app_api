@@ -15,7 +15,7 @@ import db from "../../plugin/db.js";
         }
     } catch (err) {
         // console.error(err)
-        res.status(401).json({ "err": " please enter the hash of secret of pass key" })
+        res.status(500).json({ "err": " please enter the hash of secret of pass key" })
     }
 }
  export default seeuser

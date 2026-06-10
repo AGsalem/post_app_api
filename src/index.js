@@ -33,5 +33,5 @@ const start = async () => {
 }
 start()
 app.use((req, res) => {
-    res.status(404).json({ "error": "page not found please go /" })
+   return res.status(404).json({ "error": "page not found please go /" })
 });

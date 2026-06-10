@@ -22,8 +22,8 @@ const UpdateUser=async(req,res)=>{
             })
         }
     } catch (err) {
-        console.error(err)
-        return res.status(401).json({err:"please enter anthor name and pass"})
+        // console.error(err)
+        return res.status(500).json({err:"please enter anthor name and pass"})
     }
 }
 export default UpdateUser

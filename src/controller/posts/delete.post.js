@@ -13,7 +13,7 @@ const DeletePost = (async (req, res) => {
             return res.status(201).json({ "message": "Delete post  finsh" })
         }
     } catch (err) {
-        console.error(err)
+        // console.error(err)
         return res.status(401).json({ err: "please enter anthor name and pass", post: post, com: com, user_id: id })
 
     }
