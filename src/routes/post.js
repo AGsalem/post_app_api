@@ -8,7 +8,7 @@ const posts = e.Router()
 // رؤية جميع الوستات
 posts.get('/post', seeAllpost)
 // انشاء بوست بيid المستخدم
-posts.post('post/:id', CreatePost)
+posts.post('/post/:id', CreatePost)
 //  تحديث المستخدم بمعلوم ال id
 posts.put('/post/:id', UpdatePost)
 // حذف البوست 

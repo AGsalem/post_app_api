@@ -1,4 +1,5 @@
 import db from "../../plugin/db.js";
+// دية ادمن للمستخدم للتحكم في صلاحيتة صفحة بس
 const seeuser = async (req, res) => {
     try {
         const [CreateUser] = await db.query("SELECT * FROM `users`")
@@ -7,7 +8,6 @@ const seeuser = async (req, res) => {
         console.log(admin)
         console.log(hashkeysec)
         if (admin != hashkeysec) {
-
             return res.status(401).json({ "err": "Try Again" })
         }
         else if (admin == hashkeysec) {

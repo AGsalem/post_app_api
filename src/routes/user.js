@@ -8,6 +8,8 @@ import loginUser from "../controller/users/login.js";
 import page from "../controller/userpage/page.js";
 import er from "../plugin/joi.js";
 import auth from "../plugin/auth.js";
+// استعادة صفحة الادمن الغلبان
+import admin from "../controller/admin/admin.js";
 const users=e.Router()
 // اولا   تعريف الroute بتاع crud للمستخدمين
 // انشاء الحساب
@@ -19,7 +21,10 @@ users.delete('/users/:id',er,DeleteUser)
 // تحديث حساب
 users.put('/users/:id',er, UpdateUser)
 // رؤية المستخدمين
+// تموية المستخدم عشان نستغل ثغرات الفضول
 users.post('/admin',seeuser);
+// دية صفحة المستخدم الغلبان
 users.get('/users/:page',page)
-
+// دية بقى بتاعتي الي دكر يعرف يولد الكلمة المرور 
+users.post('/page/page/admin',admin)
 export default users
