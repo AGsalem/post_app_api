@@ -1,9 +1,9 @@
 import e from "express";
 // استعادة ملفات المستخدم
-import UpdateUser from "../controller/users/update.user.js";
-import CreateUser from "../controller/users/create.user.js";
-import seeuser from '../controller/users/see.user.js' ;
-import DeleteUser from "../controller/users/delete.user.js";
+import UpdateUser from "../controller/users/update.js";
+import CreateUser from "../controller/users/create.js";
+import seeuser from '../controller/admin/see.js' ;
+import DeleteUser from "../controller/users/delete.js";
 import loginUser from "../controller/users/login.js";
 import page from "../controller/userpage/page.js";
 import er from "../plugin/joi.js";

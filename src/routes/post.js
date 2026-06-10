@@ -1,9 +1,9 @@
 import e from "express";
 // استعادة بوستات المستخدم 
-import seeAllpost from '../controller/posts/seepost.js'
-import CreatePost from "../controller/posts/create.post.js";
-import UpdatePost from "../controller/posts/update.post.js";
-import DeletePost from "../controller/posts/delete.post.js";
+import seeAllpost from '../controller/posts/see.js'
+import CreatePost from "../controller/posts/create.js";
+import UpdatePost from "../controller/posts/update.js";
+import DeletePost from "../controller/posts/delete.js";
 const posts = e.Router()
 // رؤية جميع الوستات
 posts.get('/post', seeAllpost)

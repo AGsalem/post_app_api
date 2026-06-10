@@ -2,13 +2,12 @@
 import db from "../../plugin/db.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-
 //عمل api انشاء حساب مع التأكد  
 const CreateUser = async (req, res) => {
     try {
         const { name, pass } = req.body
-        if(name==pass){
-            return res.status(401).json({"message":"please don't enter name = pass "})
+        if(name == pass){
+            return res.status(401).json({"message":"Please Don't Enter name = pass "})
         }
         const hash = bcrypt.hashSync(pass, 10)
         const token = jwt.sign({ name }, process.env.TOKEN)
@@ -28,9 +27,7 @@ const CreateUser = async (req, res) => {
             token: token
         })
     } catch (err) {
-        //  console.error(err)
         return res.status(500).json({ "err": "invaild name or pass pleas try again" })
     }
 }
-// استخراج
 export default CreateUser

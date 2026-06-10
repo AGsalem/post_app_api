@@ -17,7 +17,4 @@ connect.use(users)
 connect.use(limit)
 // لتعريف ملف multer في السيرفر
 connect.use(multer)
-// استخدام connectلتعريف ملفات المستخدم في  السيرفر 
-// بعد التعليق دة كل ملفات plugin هتتعرف هنا زي jwt ,joi
-// console.log("connection true")
 export default connect
