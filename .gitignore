@@ -14,5 +14,5 @@ run php,express
 # # 
 pnpm-lock.yaml
 pnpm-workspace.yaml
-.enva
+.env
 schema/
