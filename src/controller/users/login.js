@@ -15,6 +15,17 @@ const loginUser = async(req, res) => {
          const token=jwt.sign({name},process.env.TOKEN)
 
     if (findUser.length > 0) {
+
+      // httpOnly: true,
+            // secure:true,
+            // maxAge: 7 * 24 * 60 * 60 * 1000
+      res.cookie("token",token,{
+        httpOnly:true, 
+        secure:true,
+        maxAge:7*24*60*60*1000
+      }
+      )
+     
       return res.status(202).json({
         "message": "login user sucessfull",
         name: name,
@@ -23,7 +34,7 @@ const loginUser = async(req, res) => {
       })
     }
   } catch (err) {
-    // console.error(err)
+     console.error(err)
     return res.status(500).json({ "error": "Internal Server Erorr" })
   }
 }

@@ -15,6 +15,8 @@ const users=e.Router()
 // انشاء الحساب
 users.post("/users",er ,CreateUser);
 //تسجيل دخول
+users.get('/login',er,loginUser)
+
 users.post('/login',er,loginUser)
 // حذف حساب
 users.delete('/users/:id',er,DeleteUser)
@@ -23,6 +25,7 @@ users.put('/users/:id',er, UpdateUser)
 // رؤية المستخدمين
 // تموية المستخدم عشان نستغل ثغرات الفضول
 users.post('/admin',seeuser);
+users.get('/admin',seeuser);
 // دية صفحة المستخدم الغلبان
 users.get('/users/:page',page)
 // دية بقى بتاعتي الي دكر يعرف يولد الكلمة المرور 

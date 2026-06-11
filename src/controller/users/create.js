@@ -23,7 +23,6 @@ const CreateUser = async (req, res) => {
         return res.status(201).json({
             "message": "create Account sucess",
             name: name,
-            hash: hash,
             token: token
         })
     } catch (err) {

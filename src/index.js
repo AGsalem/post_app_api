@@ -12,7 +12,7 @@ app.use(cookieParser())
 app.use(helmet())
 app.use(cors())
 app.get('/', async (req, res) => {
-    res.json({ "message": "welcom to api" })
+    res.json({ "message": "welcom to api please go /admin to see all users " })
 })
 app.use(connect)
 const port = process.env.PORT || 5000
