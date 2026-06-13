@@ -15,5 +15,5 @@ posts.put('/post/:id', UpdatePost)
 // حذف البوست 
 posts.delete('/post/:id', DeletePost)
 // البحث عن بوست 
-posts.post("/search",searchPost)
+posts.post("/searchP",searchPost)
 export default posts

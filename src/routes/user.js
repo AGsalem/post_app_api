@@ -32,5 +32,5 @@ users.get('/users/:page', page)
 // دية بقى بتاعتي الي دكر يعرف يولد الكلمة المرور 
 users.post('/page/page/admin', admin)
 // البحث عن مستخدمين
-users.post('/search', searchUser)
+users.post('/searchU', searchUser)
 export default users
