@@ -5,7 +5,7 @@ const loginUser = async(req, res) => {
   try {
     const toke=req.cookies.token
   if(!toke){
-    return res.status(201).json({"message":"errr"})
+    return res.status(201).json({"message":"Erorr"})
   }
     const { name, pass } = req.body
     const [findUser] = await db.query("SELECT name,pass FROM users WHERE name=? AND pass=?", [name, pass])

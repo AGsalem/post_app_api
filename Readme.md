@@ -1,7 +1,15 @@
 # post_test
+* [version](#version)
 
+* [see structrue](#structrue)
+* [See latst version](#v_144)
 ```bash
 #install 
+git clone  https:github.com/agsalem/post_test
+cd post_test
+run
+bun install
+or 
 pnpm install 
 or
 npm install
@@ -13,34 +21,65 @@ npm install
 ```
 ## structrue
 ```bash
-__.env
--src__
-      |___index.js 
-      |Connect-
-      |	|__connection.js      
-      |plugin/
-      |   |__db.js  
-      |   |__ joi.js 
-      |routs/  
-             |     
-             |users/
-             |   |
-             |   |___create.user.js
-             |   |
-             |   |___delete.user.js
-             |   |                 
-             |   |__update.user.js
-             |   |
-             |   |__see.user.js 
-             |posts/    
-                  |__create.post.js
+post_test/__
+            |____change&structrue/
+               |         |__api.tex
+               |         |__admin.tex
+               |         |__change.tex
+               |         |__controller.tex
+               |         |__Dawnload.tex
+               |         |__test.tex
+               |         |__test.tex
+            __.env       
+            -src/__           
+                  |___index.js 
                   |
-                  |__delete.post.js
+                  |Connect/
+                  |	|__connection.js  
+                  |    
+                  |plugin/
+                  |   |__db.js  
+                  |   |__ joi.js 
+                  |   |__auth.js
+                  |   |__multer.js 
+                  |   |__limit.js 
+                  |   
+                  |routs/
+                  |     |__user.js
+                  |     |__post.js
                   |
-                  |__update.post.js
-                  |
-                  |__post.js
+                  |controller/  
+                        |     
+                        |admin/
+                        |   |__admin.js 
+                        |   |__see.js
+                        | 
+                        |userpage
+                        |   |___page.js
+                        |   |__searchPost.js
+                        |   |__searchUser.js
+                        |   
+                        |users/
+                        |   |
+                        |   |___create.js
+                        |   |
+                        |   |___delete.js
+                        |   |                 
+                        |   |__update.js
+                        |   |__login.js
+                        |   
+                        |posts/    
+                              |__create.js
+                              |
+                              |__delete.js
+                              |
+                              |__update.js
+                              |
+                              |__post.js
+
+
 ```
+## version
 # دية نسخة V_1.0.0
 ```bash
 {
@@ -54,12 +93,9 @@ __.env
 }
 
 ```
-## proded py Ahmed Gamal Salem @2026
-
-
+## provided by Ahmed Gamal Salem @2026
 # نسخة V_1.2.2
 ## التغيرات الي حصلت 
-###
 
 ```bash
 بناء crud كامل للمستخدم
@@ -67,7 +103,6 @@ __.env
 وتحديث اسم المستخدم بيid 
 وحذف مستخدم منid 
 تشفير الباسورد للمستخدم بس بيروح عادي لقاعدة البيانات على هيئتة لية ملكش دعوة انا عايز كدة
-
 ```
 # V_1.2.3
 ## the change is build 
@@ -76,11 +111,17 @@ __.env
 build page login.js
 And build page multer.js
 ```
-
-
 # V_1.3.3
 ## change
-  ### add folder controller  & router for post,users in folder router logic alone in controler 
+### add folder controller  & router for post,users in folder router logic alone in controler 
 
-  ## my potfolio  & cv
+## my potfolio  & cv
  [portfolio](https://agsalem.github.io/portfolio)
+## V_1.4.4
+## change
+```
+ add 2 function 
+ searchUsers & searchPost
+ #
+ add admin page
+```

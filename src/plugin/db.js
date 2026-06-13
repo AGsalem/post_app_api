@@ -8,4 +8,4 @@ const db = await mysql2.createConnection({
 })
 db.connect()
 export default db
-// ملاحظة مهمة جدا الاتصال بقاعدة البيانات مش بيتعرف في دالة .use=
+// ملاحظة مهمة جدا الاتصال بقاعدة البيانات مش بيتعرف في دالة .use
