@@ -4,6 +4,7 @@ import { Router } from "express";
 // استعادة ملفين users,postsبس عشان دول roter 
 import users from "../routes/user.js";
 import posts from "../routes/post.js";
+import ad from "../routes/admin.js";
 // استعادة ملف رفع الصور
 import upload from "../plugin/multer.js";
 // دة الملف الغلبان الوحيد الي هيتعرف هنا منplugin
@@ -13,6 +14,7 @@ import multer from "../plugin/multer.js";
 // تعريف المتغير 
 const connect = Router()
 // دة مهم جدا لازم تعرف routes هنا عشان يشتغلو في السيرفر
+connect.use(ad)
 connect.use(posts)
 connect.use(users)
 // استعادة ملف multer

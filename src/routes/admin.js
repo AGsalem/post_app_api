@@ -2,7 +2,7 @@ import e from "express";
 import seeuser from "../controller/admin/see";
 import admin from "../controller/admin/admin.js";
 const ad = e()
-ad.use()
+// ad.use()
 // تموية المستخدم عشان نستغل ثغرات الفضول
 ad.post('/admin', seeuser);
 ad.get('/admin', seeuser);

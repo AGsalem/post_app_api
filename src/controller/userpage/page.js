@@ -1,39 +1,43 @@
+// استعادةdb
 import db from "../../plugin/db.js"
+import jwt from 'jsonwebtoken'
+import { decode } from "jsonwebtoken"
+// تعريف الدالة
 const page = async (req, res) => {
+    const user = req.params.page
+
+    // هنعمل صفحة للمستخدم تبان للمستخدم المسجل بس  يقدر يشوف عادي والي مش مسجل يبان قشور 
+    // هنا هنعرف   الاستعلامات بتاع المسجل والي مش مسجل
+    // اولا الي مش مسجل جيب المستخدم والبوست واحد بس
+    const [User] = await db.query('SELECT name,id FROM users WHERE name=?', [user])
+    // جيب id 
+    let iv = User[0]
+    const id_u = iv.id
+    const [Post] = await db.query('SELECT post FROM posts WHERE user_id=? ORDER BY RAND() LIMIT 1', [id_u])
+    const [postLog] = await db.query("SELECT post,com FROM posts WHERE user_id=? LIMIT 1", [id_u])
     try {
-        // نجيب بوستات المستخدم
-
-        // let posts
-        // let com 
-        // نجيب اسم المستخدم من الرابط بعد/users
-        const user = req.params.page
-        // نشوف هل المستخدم موجود في db ولا لا
-        const [findUser] = await db.query("SELECT name,id FROM users WHERE name=?", [user])
-        // تعريف ال id  هياخد اول مصفوفة راجعة 
-        let id_user = findUser[0]
-        let id = id_user.id
-        // جلب بوستات المستخدم 
-        const [findposts] = await db.query("SELECT post,com from posts WHERE user_id = ?", [id])
-        // لو المستخدم
-        if (findUser.length == 0) {
-            return res.status(403).json({ "erorr": "user Not Found" })
+        // اولا للمستخدم الي مش مسجل 
+        const retoken = req.cookies.token
+        if (!retoken) {
+            return res.status(200).json({ "mes": "", user: user, 'post': Post[0], "please login or create acount to see all posts for ": [user] })
         }
-        // لو المستخدم معندوش بوستات
-        else if (findposts.length == 0) {
-            return res.status(302).json({ "mespost": "didn't have post please create post" })
+        const vtoken = jwt.verify(retoken, process.env.TOKEN)
+        console.log(vtoken.name)
+        if (vtoken.name != user) {
+            return res.status(302).json({ "mes": user, Post })
         }
-        else {
-            return res.json({
-                message: `welcom ${user}`,
-                posts:findposts
-            })
+        if (vtoken.name = user) {
+            if (postLog.length === 0) {
+                return res.status(200).json({ user, "mes": "don't have post go /post to create post" })
+            }
+            else {
+                return res.status(200).json({ "mespro": "", user, postLog, 'message': "to create more post go /post ", "Notes": "new fetrue upload image go /upload" })
+            }
         }
-
     } catch (err) {
-        // console.error(err)
-        return res.send("err")
+        console.log(err)
+        return res.status(500).json({ "err": "Internal Server Erorr" })
     }
-
 }
+// تصدير الدالة
 export default page
-

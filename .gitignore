@@ -17,3 +17,4 @@ pnpm-workspace.yaml
 .env
 schema/
 admin/
+test
