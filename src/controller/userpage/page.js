@@ -5,6 +5,7 @@ import { decode } from "jsonwebtoken"
 // تعريف الدالة
 const page = async (req, res) => {
     const user = req.params.page
+      const retoken = req.cookies.token
 
     // هنعمل صفحة للمستخدم تبان للمستخدم المسجل بس  يقدر يشوف عادي والي مش مسجل يبان قشور 
     // هنا هنعرف   الاستعلامات بتاع المسجل والي مش مسجل
@@ -17,7 +18,6 @@ const page = async (req, res) => {
     const [postLog] = await db.query("SELECT post,com FROM posts WHERE user_id=? LIMIT 1", [id_u])
     try {
         // اولا للمستخدم الي مش مسجل 
-        const retoken = req.cookies.token
         if (!retoken) {
             return res.status(200).json({ "mes": "", user: user, 'post': Post[0], "please login or create acount to see all posts for ": [user] })
         }
