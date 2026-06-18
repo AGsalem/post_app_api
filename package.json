@@ -21,7 +21,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "bu":"bun build ./src/index.js --outdir ./dist --target bun",
+    "bu":"bun build ./src/index.js --outdir ./dist --target node",
     "go":"bun --watch src/index.js"
   },
   "keywords": [],

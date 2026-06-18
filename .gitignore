@@ -18,3 +18,4 @@ pnpm-workspace.yaml
 schema/
 admin/
 test
+dist
