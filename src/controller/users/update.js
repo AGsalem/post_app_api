@@ -1,5 +1,6 @@
 import db from "../../plugin/db.js";
 import jwt from "jsonwebtoken";
+import { ISE } from "../../types/error.js";
 const UpdateUser = async (req, res) => {
     const id = req.params.id
     if (!id) {
@@ -37,7 +38,7 @@ const UpdateUser = async (req, res) => {
         }
     } catch (err) {
         console.error(err)
-        return res.status(500).json({ "err": "please enter anthor name and pass" })
+        return ISE
     }
 }
 export default UpdateUser

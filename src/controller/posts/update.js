@@ -2,7 +2,7 @@ import e from "express";
 import db from "../../plugin/db.js";
 const UpdatePost = ( async (req, res) => {
     try {
-        const id = req.params.id
+        
         const [al] = await db.query("SELECT * FROM users WHERE id = ?", [id])
         if (al.length === 0) {
             return res.status(305).json({ "err": "id undfind please try again" })

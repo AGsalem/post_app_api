@@ -26,5 +26,8 @@ const start = async () => {
 }
 start()
 app.use((req, res) => {
-    return res.status(404).json({ "error": "page not found please go /" })
+    return res.status(500).json({ "error": "page not found please go /" })
 });
+app.use((req,res)=>{
+    return res.status(400).json({"error":"bad request"})
+})

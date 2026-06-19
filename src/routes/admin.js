@@ -1,5 +1,5 @@
 import e from "express";
-import seeuser from "../controller/admin/see";
+import seeuser from "../controller/admin/see.js";
 import admin from "../controller/admin/admin.js";
 const ad = e()
 // ad.use()

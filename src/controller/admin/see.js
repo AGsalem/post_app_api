@@ -1,4 +1,5 @@
 import db from "../../plugin/db.js";
+import {  ISE } from "../../types/error.js";
 // دية ادمن للمستخدم للتحكم في صلاحيتة صفحة بس
 const seeuser = async (req, res) => {
     try {
@@ -16,7 +17,7 @@ const seeuser = async (req, res) => {
         }
     } catch (err) {
 
-        res.status(500).json({ "err": " please enter the hash of secret of pass key" })
+       return ISE(req,res)
     }
 }
 export default seeuser

@@ -2,17 +2,20 @@
 import db from "../../plugin/db.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+//
+import { EREQ, ISE } from "../../types/error.js";
 //عمل api انشاء حساب مع التأكد  
 const CreateUser = async (req, res) => {
-    const { name, pass } = req.body
+    const { name, pass } = req.item
+    if (!name || !pass) {
+        return res.status(400).json("error")
+    }
     const hash = bcrypt.hashSync(pass, 10)
     const token = jwt.sign({ name }, process.env.TOKEN)
     try {
-
         if (name == pass) {
-            return res.status(401).json({ "message": "Please Don't Enter name = pass " })
+            return EREQ
         }
-
         const create_user = await db.query("INSERT INTO `users` (`name`,`pass`) VALUES (?,?)", [name, pass])
         if (!create_user) {
             return res.status(400).json({ "message": "err" })
@@ -28,7 +31,7 @@ const CreateUser = async (req, res) => {
             token: token
         })
     } catch (err) {
-        return res.status(500).json({ "err": "invaild name or pass pleas try again" })
+        return ISE
     }
 }
 export default CreateUser

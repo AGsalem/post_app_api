@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken";
 import db from "../../plugin/db.js";
+import { ISE } from "../../types/error.js";
 const DeleteUser = async (req, res) => {
     // ملحوظة الي هيتنفذ بس الي هيكون في try التعريفات برة
     // اولا جيب  id من الرابط
@@ -31,12 +32,14 @@ const DeleteUser = async (req, res) => {
         console.log(user)
         if (nm == user) {
             const [deluser] = await db.query("DELETE FROM users WHERE id=?", [id])
+            if(deluser){
+            res.clearCookie("token")
             return res.status(200).json({ "mes": "delete user Sucessfull", user })
-        }
+        }}
         // ثانيا شوف الid موجود ولا لا
     } catch (err) {
         console.error(err)
-        return res.status(500).json('err')
+        return ISE
     }
 }
 export default DeleteUser 

@@ -1,5 +1,6 @@
 import db from "../../plugin/db.js"
 import jwt from 'jsonwebtoken'
+import { ISE } from "../../types/error.js"
 // مفروض في الصفحة دية انا كأدمن اسجل الدخول من قاعدة بيانات مخصصة ليا بس  واكون حاططها ليا وهحفظها في ملف مخصص مش هيترفع طبعا
 const admin = async (req, res) => {
     try {
@@ -29,7 +30,7 @@ const admin = async (req, res) => {
             })
         }
     } catch (err) {
-        return res.status(500).json({ "error": "Internal Server Erorr " })
+        return ISE(req, res)
     }
 }
 export default admin

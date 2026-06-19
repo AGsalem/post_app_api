@@ -12,7 +12,5 @@ const storage = multer.diskStorage({
 const uploa = multer({ storage: storage })
 upload.post(('/upload'), uploa.single('image'), async (req, res) => {
     res.status(201).json({ "mes": "upload image finish" })
-
-
 });
 export default upload;

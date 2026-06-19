@@ -1,8 +1,8 @@
 # post_test
-* [version](#version)
+* [version](#version) 
 
 * [see structrue](#structrue)
-* [See latst version](#v_144)
+* [See latst version](#v_154)
 ```bash
 #install 
 git clone  https:github.com/agsalem/post_test
@@ -22,6 +22,7 @@ npm install
 ## structrue
 ```bash
 post_test/__
+            |
             |____change&structrue/
                |         |__api.tex
                |         |__admin.tex
@@ -47,6 +48,13 @@ post_test/__
                   |routs/
                   |     |__user.js
                   |     |__post.js
+                  |     |__admin.js
+                  |
+                  |types/
+                  |     |
+                  |     |__error.js
+                  |     |__n&p.js
+                  |     |__p&c.js
                   |
                   |controller/  
                         |     
@@ -54,18 +62,19 @@ post_test/__
                         |   |__admin.js 
                         |   |__see.js
                         | 
-                        |userpage
+                        |public
                         |   |___page.js
                         |   |__searchPost.js
                         |   |__searchUser.js
                         |   
                         |users/
                         |   |
-                        |   |___create.js
+                        |   |__create.js
                         |   |
-                        |   |___delete.js
-                        |   |                 
+                        |   |__delete.js    
+                        |   |
                         |   |__update.js
+                        |   |
                         |   |__login.js
                         |   
                         |posts/    
@@ -80,7 +89,7 @@ post_test/__
 
 ```
 ## version
-# دية نسخة V_1.0.0
+## V_1.0.0
 ```bash
 {
   #  انشاء هيكل قوي وسهل التعديل 
@@ -125,3 +134,16 @@ And build page multer.js
  #
  add admin page
 ```
+## V_1.5.4
+## changes 
+    add folder types
+      in folder add error.js
+      add n&p.js
+      add p&c
+      add all variable in folder n&p and p&changes
+      Notes
+      n&p is  shortcut for name & pass
+      p&c is  shortcut for post & commint
+      n&p added for variable to make code in controller less for folder users
+      p&c added for variable to make code in controller less for folder posts
+

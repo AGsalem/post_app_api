@@ -5,7 +5,7 @@ import { decode } from "jsonwebtoken"
 // تعريف الدالة
 const page = async (req, res) => {
     const user = req.params.page
-      const retoken = req.cookies.token
+    const retoken = req.cookies.token
 
     // هنعمل صفحة للمستخدم تبان للمستخدم المسجل بس  يقدر يشوف عادي والي مش مسجل يبان قشور 
     // هنا هنعرف   الاستعلامات بتاع المسجل والي مش مسجل

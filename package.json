@@ -15,14 +15,12 @@
   },
   "type": "module",
   "name": "post_test",
-  "version": "1.4.4",
+  "version": "1.5.4",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "bu":"bun build ./src/index.js --outdir ./dist --target node",
-    "go":"bun --watch src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
