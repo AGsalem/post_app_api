@@ -8,7 +8,7 @@ import page from "../controller/userpage/page.js";
 import er from "../plugin/joi.js";
 // استعادة صفحة الادمن الغلبان
 import searchUser from "../controller/userpage/searchUser.js";
-import { NotFoundBody } from "../types/error.js";
+import { NotFoundBody, NoToken } from "../types/error.js";
 // استعادة ملف  item 
 import item from "../types/n&p.js";
 const users = e.Router()
@@ -19,7 +19,7 @@ users.post("/users", er, NotFoundBody, item, CreateUser);
 // users.get('/login', er, loginUser)
 users.post('/login', er, item, NotFoundBody, loginUser)
 // حذف حساب
-users.delete('/users/:id', er, NotFoundBody, item, DeleteUser)
+users.delete('/users/:id',er, DeleteUser)
 // تحديث حساب
 users.put('/users/:id', er, NotFoundBody, item, UpdateUser)
 // رؤية المستخدمين

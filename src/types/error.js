@@ -8,11 +8,15 @@ const BODY = (req, res) => {
 }
 // لو المستخدم مش موجود
 const UND = (req, res) => {
-    res.status(401).json({ "error": "User UndFind" })
+    res.status(401).json({ "error": "User Not defind" })
 }
 // دية لو الاسم = الكلمة المرور  ارجع بي الخطا فوري
 const EREQ = (req, res) => {
     res.status(401).json({ "message": "Please Don't Enter name = pass " })
+}
+const NoToken=(req,res,next)=>{
+return  res.status(401).json({"err":"Unauthorized users"})
+next()
 }
 // المتغير دة مخصوص يعني هيتحط على كل الrouter عشان بيحميهم من كراش السيرفر
 const NotFoundBody = (req, res,next) => {
@@ -21,4 +25,4 @@ const NotFoundBody = (req, res,next) => {
     }
     next()
 }
-export { ISE, BODY, UND, EREQ, NotFoundBody }
+export { ISE, BODY, UND, EREQ, NotFoundBody,NoToken }
