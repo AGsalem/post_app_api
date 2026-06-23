@@ -13,28 +13,23 @@ const DeleteUser = async (req, res) => {
         }
 
         const ftoken = req.cookies.token
-        if(!ftoken){
-            return NoToken(req,res)
+        if (!ftoken) {
+            return NoToken(req, res)
         }
         // نفك تشفير jwt
-        const vtoken = jwt.verify(ftoken, process.env.TOKEN,function(err){
-            if(err){
-                return res.status(401).json({"err":"err"})
-            }
-        })
+        const vtoken = jwt.verify(ftoken, process.env.TOKEN)
         // نجيب اسم المستخدم بعد فك التشفير
         const nm = vtoken.name
         // نجيب اسم المستخدم بعد يتجاب من القاعدة
-        const NameUser = fuser[0]
         // لو مفيشid والراجع من القاعدة ولا حاجة
-        if (!id || !ftoken || !vtoken) {
+        if (!id || !ftoken || !vtoken || nm.length === 0) {
             return res.status(401).json({
                 "error": "Unauthorized to delete user"
             })
         }
         // اولا لو الid مش موجود 
-        const [fuser] = await db.query('SELECT * FROM users WHERE id =? ', [id])
-        if(fuser.length===0){
+        const [[fuser]] = await db.query('SELECT * FROM users WHERE id =? ', [id])
+        if (fuser.length === 0) {
             return res.status(401).json({ "mess": "err" })
         }
         // بعد ما اتأكدناان id المستخدم موجود نشوف هل مسجل ولا بيستعبط
@@ -43,19 +38,21 @@ const DeleteUser = async (req, res) => {
         // لو مفيش توكن  ولا توكن 
         // هي حاجة واحدة هنرجعها من مصفوفة البحث عن id بس المستخدم اسم
         // NameUser
-        const user = NameUser.name
-        console.log(user)
-        if (nm == user) {
+        const { name } = fuser
+        console.log(name)
+        console.log(nm)
+        if (nm == name) {
             const [deluser] = await db.query("DELETE FROM users WHERE id=?", [id])
-            if (deluser) {
-                res.clearCookie("token")
-                return res.status(200).json({ "mes": "delete user Sucessfull", user })
-            }
+            res.clearCookie("token")
+            return res.status(200).json({ "mes": "delete user Successful", name })
+
         }
         // ثانيا شوف الid موجود ولا لا
     } catch (err) {
-        console.error(err)
-        return ISE(req, res)
+        // console.error(err)
+        return res.status(401).json({
+            "error": "Unauthorized to delete user"
+        })
     }
 }
 export default DeleteUser 

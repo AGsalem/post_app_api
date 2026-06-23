@@ -62,7 +62,7 @@ post_test/__
                         |   |__admin.js 
                         |   |__see.js
                         | 
-                        |public
+                        |userpage
                         |   |___page.js
                         |   |__searchPost.js
                         |   |__searchUser.js
@@ -111,7 +111,6 @@ post_test/__
 بناء صفحة انشاء حساب 
 وتحديث اسم المستخدم بيid 
 وحذف مستخدم منid 
-تشفير الباسورد للمستخدم بس بيروح عادي لقاعدة البيانات على هيئتة لية ملكش دعوة انا عايز كدة
 ```
 # V_1.2.3
 ## the change is build 
@@ -135,7 +134,9 @@ And build page multer.js
  add admin page
 ```
 ## V_1.5.4
-## changes 
+## changes
+    auth  for token in cookies vierfy token and execute name from token and  
+    
     add folder types
       in folder add error.js
       add n&p.js
@@ -146,4 +147,5 @@ And build page multer.js
       p&c is  shortcut for post & commint
       n&p added for variable to make code in controller less for folder users
       p&c added for variable to make code in controller less for folder posts
+
 

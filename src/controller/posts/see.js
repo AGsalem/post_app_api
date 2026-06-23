@@ -1,12 +1,12 @@
-import jwt from "jsonwebtoken";
+
 import db from "../../plugin/db.js";
 const seeAllpost = async (req, res) => {
     try {
-        const [seePostNotSign] = await db.query('SELECT post FROM posts ORDER BY RAND() ')
-        const [seePostSign] = await db.query("SELECT * FROM posts ORDER BY RAND()")
+        const [[seePostNotSign]] = await db.query('SELECT post FROM posts ORDER BY RAND() ')
+        const [[seePostSign]] = await db.query("SELECT post,com FROM posts ORDER BY RAND()")
         const retoken = req.cookies.token
         if (!retoken || retoken.length === 0) {
-            return res.status(200).json(seePostNotSign)
+            return res.status(200).json({seePostNotSign})
         }
         else{
             return res.status(200).json(seePostSign)
@@ -14,7 +14,7 @@ const seeAllpost = async (req, res) => {
         
     } catch (err) {
 
-        console.error(err)
+        // console.error(err)
         return res.status(500).json({ "err": "Internal Server Error" })
     }
 }

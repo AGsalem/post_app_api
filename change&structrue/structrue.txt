@@ -24,7 +24,7 @@ post_test/__
                   |Connect/
                   |	|__connection.js  
                   |    
-                  |plugin/
+                  |userpage/
                   |   |__db.js  
                   |   |__ joi.js 
                   |   |__auth.js

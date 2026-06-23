@@ -34,7 +34,7 @@ export default async function tokens(req, res, next) {
 
         }
     } catch (err) {
-        console.error(err)
+        // console.error(err)
         return ISE(req, res)
     }
 

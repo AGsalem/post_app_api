@@ -17,6 +17,9 @@ const CreateUser = async (req, res) => {
             return EREQ
         }
         const create_user = await db.query("INSERT INTO `users` (`name`,`pass`) VALUES (?,?)", [name, pass])
+        // نجيب id المستخدم من بعد انشاء الحساب فورا
+        const [[findID]] = await db.query('SELECT id FROM users WHERE name=?', [name])
+        const { id } = findID
         if (!create_user) {
             return res.status(400).json({ "message": "err" })
         }
@@ -26,9 +29,11 @@ const CreateUser = async (req, res) => {
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
         return res.status(201).json({
-            "message": "create Account SucessFull",
+             "create Account Successfully":`thanke you  ${name} for you to choose my wevsite postapp `,
             name: name,
-            token: token
+            id: id,
+            token: token,
+            "message":`please enter url /users/${name} to see you privet page `,
         })
     } catch (err) {
         return ISE
