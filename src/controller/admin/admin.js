@@ -11,7 +11,7 @@ const admin = async (req, res) => {
         }
         // التأكد ان انا الي داخل مش حد تاني
 
-        const findme = await db.query('SELECT id , admin_name,admin_pass FROM admin WHERE id = ? AND admin_name = ?  AND admin_pass = ?', [id, admin_name, admin_pass])
+        const findme = await db.query('SELECT id_admin , admin_name,admin_pass FROM admin WHERE id_admin= ? AND admin_name = ?  AND admin_pass = ?', [id, admin_name, admin_pass])
         if (!findme) {
             return res.status(401).json({ "error": "try again" })
         }
@@ -30,6 +30,7 @@ const admin = async (req, res) => {
             })
         }
     } catch (err) {
+        // console.erorr(err)
         return ISE(req, res)
     }
 }

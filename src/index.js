@@ -21,7 +21,7 @@ const start = async () => {
 
         console.log(`port in ${port}`)
         //التعليق هيتشال من عليها حذف الي في الterminal
-        // console.clear()
+        console.clear()
     })
 }
 start()
