@@ -26,5 +26,5 @@ users.put('/users/:id', er, NotFoundBody, item, UpdateUser)
 // دية صفحة المستخدم الغلبان
 users.get('/users/:page', page)
 // البحث عن مستخدمين
-users.post('/searchU', NotFoundBody, searchUser)
+users.post('/searchU', searchUser)
 export default users
